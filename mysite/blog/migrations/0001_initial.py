@@ -33,12 +33,12 @@ class Migration(migrations.Migration):
                 ('text', models.TextField()),
                 ('create_date', models.DateTimeField(default=datetime.datetime(2018, 7, 3, 1, 40, 49, 660572, tzinfo=utc))),
                 ('published_date', models.DateTimeField(blank=True, null=True)),
-                ('author', models.ForeignKey(on_delete='CASCADE', to=settings.AUTH_USER_MODEL)),
+                ('author', models.ForeignKey(on_delete=models.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.AddField(
             model_name='comment',
             name='post',
-            field=models.ForeignKey(on_delete='CASCADE', related_name='comments', to='blog.Post'),
+            field=models.ForeignKey(on_delete=models.CASCADE, related_name='comments', to='blog.Post'),
         ),
     ]
